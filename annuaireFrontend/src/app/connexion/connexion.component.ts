@@ -19,6 +19,5 @@ export class ConnexionComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 }
