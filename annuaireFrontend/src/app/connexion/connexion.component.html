@@ -1,0 +1,21 @@
+<div>
+  <mat-card width="page-width">
+    <mat-card-title>Connexion</mat-card-title>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="azerty@qsdf.fr">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput placeholder="********">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button>Connexion</button>
+    <br>
+    <h3>
+      Vous ne disposez pas de compte? <a [routerLink]="['/inscription']">S'inscrire</a>
+    </h3>
+  </mat-card>
+</div>
