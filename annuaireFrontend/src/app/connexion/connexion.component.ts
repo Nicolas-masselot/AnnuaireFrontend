@@ -18,6 +18,5 @@ export class ConnexionComponent implements OnInit {
     });
   }
   
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

@@ -6,6 +6,7 @@ import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisate
 import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
+  { path: '',   redirectTo: '/connexion', pathMatch: 'full' },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'liste_utilisateur', component: ListeUtilisateursComponent },
