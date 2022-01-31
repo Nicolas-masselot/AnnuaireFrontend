@@ -1,5 +1,5 @@
-<div>
-  <mat-card width="page-width">
+<div align="center">
+  <mat-card class="main_card">
     <mat-card-title>Inscription</mat-card-title>
     <br>
     <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
@@ -47,7 +47,7 @@
       <input matInput placeholder="********">
     </mat-form-field>
     <br>
-    <button mat-raised-button>Connexion</button>
+    <button mat-raised-button [routerLink]="['/profil']">S'inscrire</button>
     <br>
     <h3>
       Vous possédez déjà un compte? <a [routerLink]="['/connexion']">Se connecter</a>
