@@ -1,5 +1,7 @@
-<button mat-raised-button class="top_button">Déconnexion</button>
-<button mat-raised-button class="top_button">Accueil</button>
+<mat-card-actions align="end">
+  <button mat-raised-button class="top_button" routerLink="/connexion">Déconnexion</button>
+  <button mat-raised-button class="top_button" routerLink="/liste_utilisateur">Accueil</button>
+</mat-card-actions>
 <h1>Profil</h1>
 <div class="main_content">
   <mat-card class="inner_card">
@@ -17,7 +19,7 @@
       <mat-list-item>Code postal</mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>Ville</mat-list-item>
-    </mat-list>    
+    </mat-list>
   </mat-card>
   <mat-card class="inner_card">
     <mat-list>
