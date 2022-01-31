@@ -1,8 +1,39 @@
-<div>
-  <mat-card display="inline-block">
-    test
+<button mat-raised-button class="top_button">Déconnexion</button>
+<button mat-raised-button class="top_button">Accueil</button>
+<h1>Profil</h1>
+<div class="main_content">
+  <mat-card class="inner_card">
+    <mat-list>
+      <mat-list-item>Nom</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Prénom</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Téléphone</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Adresse</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Mail</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Code postal</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Ville</mat-list-item>
+    </mat-list>    
   </mat-card>
-  <mat-card display="inline-block">
-    test
+  <mat-card class="inner_card">
+    <mat-list>
+      <mat-list-item>{{Nom}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{Prenom}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{Tel}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{Adresse}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{Mail}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{Code_postal}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{Ville}}</mat-list-item>
+    </mat-list>
   </mat-card>
 </div>

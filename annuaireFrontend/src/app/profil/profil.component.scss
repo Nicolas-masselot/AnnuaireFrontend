@@ -1,0 +1,13 @@
+.main_content{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.inner_card{
+  min-width: 200px;
+}
+
+.top_button{
+  // color: #fd651b;
+  background-color: #fd651b;
+}
