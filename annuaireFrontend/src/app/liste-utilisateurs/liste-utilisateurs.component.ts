@@ -20,6 +20,7 @@ const VILLES: string[] = [
   'Marseille',
   'La Zone'
 ];
+
 const NAMES: string[] = [
   'Maia',
   'Asher',
