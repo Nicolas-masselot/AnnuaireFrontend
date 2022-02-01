@@ -17,6 +17,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import {MatListModule} from '@angular/material/list';
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
