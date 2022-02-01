@@ -18,11 +18,7 @@ const VILLES: string[] = [
   'Paris',
   'Lyon',
   'Marseille',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
+  'La Zone'
 ];
 const NAMES: string[] = [
   'Maia',
@@ -55,7 +51,7 @@ const NAMES: string[] = [
   styleUrls: ['./liste-utilisateurs.component.scss']
 })
 export class ListeUtilisateursComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['nom', 'prenom', 'tel', 'mail', 'adresse', 'code_postal', 'ville'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
