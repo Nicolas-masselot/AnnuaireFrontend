@@ -4,17 +4,20 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
 export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  fruit: string;
+  nom: string;
+  prenom: string;
+  tel: string;
+  mail: string;
+  adresse: string;
+  code_postal: string;
+  ville: string;
 }
 
 /** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
+const VILLES: string[] = [
+  'Paris',
+  'Lyon',
+  'Marseille',
   'mango',
   'peach',
   'lime',
@@ -84,16 +87,18 @@ export class ListeUtilisateursComponent implements AfterViewInit {
 
 /** Builds and returns a new User. */
 function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
+  const nom =
+    NAMES[Math.round(Math.random() * (NAMES.length - 1))]
+  const prenom =
+    NAMES[Math.round(Math.random() * (NAMES.length - 1))]
 
   return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+    nom: nom,
+    prenom: prenom,
+    tel: "06" + Math.round(Math.random() * 99999999).toString(),
+    mail: nom + prenom + "@mail.fr" ,
+    adresse: "25 rue du random",
+    code_postal: Math.round(Math.random() * 99999).toString(),
+    ville: VILLES[Math.round(Math.random() * (VILLES.length - 1))]
   };
 }
