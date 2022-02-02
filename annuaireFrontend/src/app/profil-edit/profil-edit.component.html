@@ -1,3 +1,6 @@
+
+
+
 <mat-card-actions align="end">
   <button mat-raised-button class="top_button" routerLink="/liste_utilisateur">Accueil</button>
   <button mat-raised-button class="top_button" routerLink="/connexion">Déconnexion</button>
@@ -22,23 +25,30 @@
     </mat-list>
   </mat-card>
   <mat-card class="inner_card">
-    <mat-list>
-      <mat-list-item>{{Nom}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{Prenom}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{Tel}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{Adresse}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{Mail}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{Code_postal}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{Ville}}</mat-list-item>
+    <mat-list class>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <mat-list-item><input nom="first" ngModel required #first="ngModel"></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><input prenom="last" ngModel></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><input telephone="0000000000" ngModel></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><input adress="0 rue b" ngModel></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><input mail="rien@nothing" ngModel></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><input codepostal="00000" ngModel></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><input ville="vide" ngModel></mat-list-item>
+      </form>
+
+
+
+
     </mat-list>
   </mat-card>
 </div>
 <div id="back" class="text-center" >
-  <button mat-raised-button class="button" id='button' routerLink="/profilE">Modifier</button>
+  <button mat-raised-button class="button" id='button' routerLink="/profil">Modifier</button>
 </div>
+

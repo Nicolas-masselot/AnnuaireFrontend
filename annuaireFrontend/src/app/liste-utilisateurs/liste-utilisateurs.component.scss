@@ -1,0 +1,34 @@
+.main_content{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.inner_card{
+  min-width: 200px;
+}
+
+.top_button{
+  // color: #fd651b;
+  background-color: #fd651b;
+}
+
+.top_buttons{
+  width: 100%;
+}
+
+.example-spacer {
+  width: 200px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}

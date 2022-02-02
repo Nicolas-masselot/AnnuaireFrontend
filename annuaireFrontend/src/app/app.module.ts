@@ -11,9 +11,18 @@ import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisate
 import { FormBuilder, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import { ProfilEditComponent } from './profil-edit/profil-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +31,7 @@ import {MatButtonModule} from '@angular/material/button';
     InscriptionComponent,
     ProfilComponent,
     ListeUtilisateursComponent,
+    ProfilEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +42,14 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

@@ -1,1 +1,56 @@
-<p>inscription works!</p>
+<div align="center">
+  <mat-card class="main_card">
+    <mat-card-title>Inscription</mat-card-title>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="B Goode">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Prénom</mat-label>
+      <input matInput placeholder="Johnny">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Téléphone</mat-label>
+      <input matInput placeholder="06 12 34 56 78">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="azerty@qsdf.fr">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Adresse</mat-label>
+      <input matInput placeholder="3 rue de la Hess">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Code postal</mat-label>
+      <input matInput placeholder="75001">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Ville</mat-label>
+      <input matInput placeholder="South Park">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput placeholder="********">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+      <mat-label>Confirmer le mot de passe</mat-label>
+      <input matInput placeholder="********">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button [routerLink]="['/profil']">S'inscrire</button>
+    <br>
+    <h3>
+      Vous possédez déjà un compte? <a [routerLink]="['/connexion']">Se connecter</a>
+    </h3>
+  </mat-card>
+</div>
