@@ -1,13 +1,15 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MessageService } from '../services/message.service';
+import { environment } from 'src/environments/environment';
 
 export interface UserData {
   nom: string;
   prenom: string;
   tel: string;
-  mail: string;
+  email: string;
   adresse: string;
   code_postal: string;
   ville: string;
@@ -57,12 +59,21 @@ export class ListeUtilisateursComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  // messageservice: MessageService;
 
-  constructor() {
+  constructor(private messageservice: MessageService) {
     // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    const users = Array();
 
     // Assign the data to the data source for the table to render
+    this.messageservice.sendMessage(environment.BACKENDSERVER, 'api/v1/personnes/getAllPersonnes', undefined).subscribe(
+      (response) => {
+        for (var i = 0; i < response.data.length; i++) {
+          users[i] = response.data[i];
+        }
+      }
+    );
+
     this.dataSource = new MatTableDataSource(users);
   }
 
@@ -79,7 +90,8 @@ export class ListeUtilisateursComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
 
 /** Builds and returns a new User. */
@@ -93,7 +105,7 @@ function createNewUser(id: number): UserData {
     nom: nom,
     prenom: prenom,
     tel: "06" + Math.round(Math.random() * 99999999).toString(),
-    mail: nom + prenom + "@mail.fr" ,
+    email: nom + prenom + "@mail.fr",
     adresse: "25 rue du random",
     code_postal: Math.round(Math.random() * 99999).toString(),
     ville: VILLES[Math.round(Math.random() * (VILLES.length - 1))]
