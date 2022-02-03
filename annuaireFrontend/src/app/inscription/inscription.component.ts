@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { MessageService } from '../services/message.service';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -20,11 +21,13 @@ export class InscriptionComponent implements OnInit {
   ville:string;
   password:string;
 
+  ErrorMessage:string = "";
+
   options: FormGroup;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto');
 
-  constructor(fb: FormBuilder, private messageservice: MessageService, private router:Router) {
+  constructor(fb: FormBuilder, private messageservice: MessageService, private router:Router, private authServ: AuthService) {
     this.options = fb.group({
       hideRequired: this.hideRequiredControl,
       floatLabel: this.floatLabelControl,
@@ -34,7 +37,6 @@ export class InscriptionComponent implements OnInit {
   ngOnInit(): void {}
 
   register() {
-    let user = Array();
     
     let credentials={
       login: this.mail,
@@ -44,14 +46,50 @@ export class InscriptionComponent implements OnInit {
     console.log(credentials)
     this.messageservice.sendMessage(environment.AUTHSERVER, 'api/v1/users/register', credentials ).subscribe(
       (response) => {
-        user = response.data;
         console.log(response);
         if (response.success) {
-          this.router.navigate(["/liste_utilisateur"]);
+          this.authServ.idPersonne = response.data[0].id_personnes;
+          this.authServ.idUser = response.data[0].id_users;
+          this.authServ.roleUser = response.data[0].roleuser;
+          this.authServ.storeInfo();
+          let userData = {
+            idPers: response.data[0].id_personnes,
+            adresse:this.adresse,
+            codepostal:this.code_postal,
+            email:this.mail,
+            nom:this.nom,
+            prenom:this.prenom,
+            tel:this.tel,
+            ville:this.ville 
+          }
+    
+          this.messageservice.sendMessage(environment.BACKENDSERVER, "api/v1/personnes/AddPersonne",userData).subscribe(
+            (reponse)=>{
+              console.log(reponse);
+              if (reponse.success) {
+                this.router.navigate(["/liste_utilisateur"]);
+              }else {
+                if (reponse.errorSet[0] === "INVALID_PARAMETERS") {
+                  this.ErrorMessage = "Données invalides" ;
+                } else {
+                  this.ErrorMessage = "erreur coté serveur" ;
+                }
+                
+              }
+            }
+          )
         } else {
-          console.log("no");
+          if (response.errorSet[0] === "INVALID_PARAMETERS") {
+            this.ErrorMessage = "Données invalides" ;
+          } else if (response.errorSet[0] === "USER_EXIST") {
+            this.ErrorMessage = "utilisateur déjà existant" ;
+          } else if (response.errorSet[0] === "INVALID_EMAIL") {
+            this.ErrorMessage = "adresse mail invalide" ;
+          }
+          
         }
       }
     );
+    
   }
 }

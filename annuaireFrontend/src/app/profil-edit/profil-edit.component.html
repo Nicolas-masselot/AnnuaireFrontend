@@ -26,30 +26,28 @@
   </mat-card>
   <mat-card class="inner_card">
     <mat-list class>
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-        <mat-list-item><input nom="first" ngModel required #first="ngModel"></mat-list-item>
+        <mat-list-item><input [(ngModel)]="Nom"></mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item><input prenom="last" ngModel></mat-list-item>
+        <mat-list-item><input [(ngModel)]="Prenom"></mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item><input telephone="0000000000" ngModel></mat-list-item>
+        <mat-list-item><input [(ngModel)]="Tel"></mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item><input adress="0 rue b" ngModel></mat-list-item>
+        <mat-list-item><input [(ngModel)]="Adresse"></mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item><input mail="rien@nothing" ngModel></mat-list-item>
+        <mat-list-item><input [(ngModel)]="Mail"></mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item><input codepostal="00000" ngModel></mat-list-item>
+        <mat-list-item><input [(ngModel)]="Code_postal"></mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item><input ville="vide" ngModel></mat-list-item>
-      </form>
-
-
+        <mat-list-item><input [(ngModel)]="Ville"></mat-list-item>
 
 
     </mat-list>
   </mat-card>
 </div>
 <div id="back" class="text-center" >
+  <p *ngIf="ErrorText !== ''" class=alert-danger>{{ErrorText}}</p>
   <button mat-raised-button class="button" id='button' routerLink="/profil">Annuler</button>
-  <button mat-raised-button class="button" id='button2' routerLink="/profil">Submit</button>
+  <button mat-raised-button class="button" id='button2' (click)="modify()">Submit</button>
+  
 </div>
 

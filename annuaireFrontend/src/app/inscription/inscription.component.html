@@ -47,6 +47,7 @@
       <input matInput placeholder="********" type="password">
     </mat-form-field>
     <br>
+    <p *ngIf="ErrorMessage !== ''" class=alert-danger>{{ErrorMessage}}</p>
     <button mat-raised-button (click)="register()">S'inscrire</button>
     <br>
     <h3>
