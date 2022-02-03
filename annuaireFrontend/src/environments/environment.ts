@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  BACKENDSERVER: "http://11.12.5.15:5001",
-  AUTHSERVER: "http://11.12.5.15:6001",
-  ADMINSERVER: "http://11.12.5.15:7001"
+  BACKENDSERVER: "http://139.124.86.181:5001",
+  AUTHSERVER: "http://139.124.86.181:6001",
+  ADMINSERVER: "http://139.124.86.181:7001"
 };
 
 /*
