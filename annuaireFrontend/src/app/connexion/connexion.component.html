@@ -4,15 +4,17 @@
     <br>
     <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="azerty@qsdf.fr">
+      <input matInput placeholder="azerty@qsdf.fr" type="text" [(ngModel)]="entered_login">
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
       <mat-label>Mot de passe</mat-label>
-      <input matInput placeholder="********">
+      <input matInput placeholder="********" type="password" [(ngModel)]="entered_password">
     </mat-form-field>
     <br>
-    <button mat-raised-button [routerLink]="['/profil']">Se connecter</button>
+    <div *ngIf="text" class=alert-danger>{{text}}</div>
+    <br>
+    <button mat-raised-button (click)="login()" >Se connecter</button>
     <br>
     <h3>
       Vous ne possédez pas de compte? <a [routerLink]="['/inscription']">S'inscrire</a>
